@@ -9,7 +9,7 @@ module FFMPEG
     attr_reader :container
 
     def initialize(path)
-      if(!path.includes("http://"))
+      if(!path.include?("http://"))
         raise Errno::ENOENT, "the file '#{path}' does not exist" unless File.exist?(path)
       end
 
